@@ -1,3 +1,5 @@
+package io.younghwang.javadesignpattern.simuduck;
+
 public class ModelDuck extends Duck {
     public ModelDuck() {
         flyBehavior = new FlyNoWay();

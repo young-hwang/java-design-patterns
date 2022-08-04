@@ -1,3 +1,5 @@
+package io.younghwang.javadesignpattern.simuduck;
+
 public class FlyWithWings implements FlyBehavior {
     @Override
     public void fly() {

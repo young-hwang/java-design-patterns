@@ -1,3 +1,5 @@
+package io.younghwang.javadesignpattern.simuduck;
+
 public class MallardDuck extends Duck {
     public MallardDuck() {
         quackBehavior = new Quack();
@@ -6,6 +8,6 @@ public class MallardDuck extends Duck {
 
     @Override
     public void display() {
-        System.out.println("Look like Mallard Duck");
+        System.out.println("Look like Mallard io.younghwang.javadesignpattern.simuduck.Duck");
     }
 }

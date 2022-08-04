@@ -1,3 +1,5 @@
+package io.younghwang.javadesignpattern.simuduck;
+
 public abstract class Duck {
     FlyBehavior flyBehavior;
     QuackBehavior quackBehavior;
