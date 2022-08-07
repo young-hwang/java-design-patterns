@@ -24,7 +24,7 @@ public class WeatherData implements Subject {
         forecastDisplay.update(temperature, humidity, pressure);
     }
 
-    public void setMeasurements(float temperature, float humidity, flot pressure) {
+    public void setMeasurements(float temperature, float humidity, float pressure) {
         this.temperature = temperature;
         this.humidity = humidity;
         this.pressure = pressure;
