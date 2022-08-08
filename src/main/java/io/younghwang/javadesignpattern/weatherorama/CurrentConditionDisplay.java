@@ -1,13 +1,11 @@
 package io.younghwang.javadesignpattern.weatherorama;
 
-import java.time.temporal.Temporal;
-
 public class CurrentConditionDisplay implements Observer, DisplayElement {
     private final Subject weatherData;
     private float temperature;
     private float humidity;
 
-    public CurrentConditionDisplay(Subject weatherData) {
+    public CurrentConditionDisplay(WeatherData weatherData) {
         this.weatherData = weatherData;
         weatherData.registerObserver(this);
     }

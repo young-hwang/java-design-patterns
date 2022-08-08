@@ -9,26 +9,30 @@ public class WeatherData implements Subject {
     private float humidity;
     private float pressure;
 
+    public float getTemperature() {
+        return temperature;
+    }
+
+    public float getHumidity() {
+        return humidity;
+    }
+
+    public float getPressure() {
+        return pressure;
+    }
+
     public WeatherData() {
          observers = new ArrayList<>();
     }
 
     public void measurementsChanged() {
         notifyObserver();
-        temperature= getTemperature();
-        humidity = getHumidity();
-        pressure = getPressure();
-
-        currentConditionDisplay.update(temperature, humidity, pressure);
-        statisticsDisplay.update(temperature, humidity, pressure);
-        forecastDisplay.update(temperature, humidity, pressure);
     }
 
     public void setMeasurements(float temperature, float humidity, float pressure) {
         this.temperature = temperature;
         this.humidity = humidity;
         this.pressure = pressure;
-
         measurementsChanged();
     }
 
