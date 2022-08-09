@@ -1,13 +1,16 @@
 package io.younghwang.javadesignpattern.weatherorama;
 
+import java.util.Observable;
+import java.util.Observer;
+
 public class CurrentConditionDisplay implements Observer, DisplayElement {
-    private final Subject weatherData;
+    Observable observable;
     private float temperature;
     private float humidity;
 
-    public CurrentConditionDisplay(WeatherData weatherData) {
-        this.weatherData = weatherData;
-        weatherData.registerObserver(this);
+    public CurrentConditionDisplay(Observable observable) {
+        this.observable = observable;
+        observable.addObserver(this);
     }
 
     @Override
@@ -16,9 +19,12 @@ public class CurrentConditionDisplay implements Observer, DisplayElement {
     }
 
     @Override
-    public void update(float temperature, float humidity, float pressure) {
-        this.temperature = temperature;
-        this.humidity = humidity;
-        display();
+    public void update(Observable o, Object arg) {
+        if (o instanceof WeatherData) {
+            WeatherData weatherData = (WeatherData) o;
+            this.temperature = weatherData.getTemperature();
+            this.humidity = weatherData.getHumidity();
+            display();
+        }
     }
 }

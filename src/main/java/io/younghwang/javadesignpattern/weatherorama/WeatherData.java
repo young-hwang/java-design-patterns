@@ -2,12 +2,16 @@ package io.younghwang.javadesignpattern.weatherorama;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 
-public class WeatherData implements Subject {
+public class WeatherData extends Observable {
     private List<Observer> observers;
     private float temperature;
     private float humidity;
     private float pressure;
+
+    public WeatherData() {
+    }
 
     public float getTemperature() {
         return temperature;
@@ -21,11 +25,8 @@ public class WeatherData implements Subject {
         return pressure;
     }
 
-    public WeatherData() {
-         observers = new ArrayList<>();
-    }
-
     public void measurementsChanged() {
+        setChanged();
         notifyObserver();
     }
 
@@ -36,21 +37,20 @@ public class WeatherData implements Subject {
         measurementsChanged();
     }
 
-    @Override
-    public void registerObserver(Observer observer) {
-        observers.add(observer);
-    }
+//    @Override
+//    public void registerObserver(Observer observer) {
+//        observers.add(observer);
+//    }
+//
+//    @Override
+//    public void removeObserver(Observer observer) {
+//        int i = observers.indexOf(observer);
+//        if (i >= 0) {
+//            observers.remove(i);
+//        }
+//    }
 
-    @Override
-    public void removeObserver(Observer observer) {
-        int i = observers.indexOf(observer);
-        if (i >= 0) {
-            observers.remove(i);
-        }
-    }
-
-    @Override
-    public void notifyObserver() {
-        observers.forEach(observer -> observer.update(temperature, humidity, pressure));
-    }
+//    public void notifyObserver() {
+//        observers.forEach(observer -> observer.update(temperature, humidity, pressure));
+//    }
 }
