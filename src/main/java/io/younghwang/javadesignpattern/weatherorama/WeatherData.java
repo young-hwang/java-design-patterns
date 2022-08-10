@@ -27,7 +27,6 @@ public class WeatherData extends Observable {
 
     public void measurementsChanged() {
         setChanged();
-        notifyObserver();
     }
 
     public void setMeasurements(float temperature, float humidity, float pressure) {
@@ -36,21 +35,4 @@ public class WeatherData extends Observable {
         this.pressure = pressure;
         measurementsChanged();
     }
-
-//    @Override
-//    public void registerObserver(Observer observer) {
-//        observers.add(observer);
-//    }
-//
-//    @Override
-//    public void removeObserver(Observer observer) {
-//        int i = observers.indexOf(observer);
-//        if (i >= 0) {
-//            observers.remove(i);
-//        }
-//    }
-
-//    public void notifyObserver() {
-//        observers.forEach(observer -> observer.update(temperature, humidity, pressure));
-//    }
 }
