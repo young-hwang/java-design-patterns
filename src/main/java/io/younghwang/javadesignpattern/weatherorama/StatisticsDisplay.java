@@ -1,14 +1,17 @@
 package io.younghwang.javadesignpattern.weatherorama;
 
+import java.util.Observable;
+import java.util.Observer;
+
 public class StatisticsDisplay implements Observer, DisplayElement {
-    private final Subject weatherData;
+    private Observable observable;
     private float temperature;
     private float humidity;
     private float pressure;
 
-    public StatisticsDisplay(Subject weatherData) {
-        this.weatherData = weatherData;
-        weatherData.registerObserver(this);
+    public StatisticsDisplay(Observable observable) {
+        this.observable = observable;
+        observable.addObserver(this);
     }
 
     @Override
@@ -17,10 +20,12 @@ public class StatisticsDisplay implements Observer, DisplayElement {
     }
 
     @Override
-    public void update(float temperature, float humidity, float pressure) {
-        this.temperature = temperature;
-        this.humidity = humidity;
-        this.pressure = pressure;
-        display();
+    public void update(Observable o, Object arg) {
+        if (o instanceof WeatherData) {
+            this.temperature = temperature;
+            this.humidity = humidity;
+            this.pressure = pressure;
+            display();
+        }
     }
 }
