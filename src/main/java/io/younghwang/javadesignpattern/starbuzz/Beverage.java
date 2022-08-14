@@ -1,13 +1,11 @@
 package io.younghwang.javadesignpattern.starbuzz;
 
-public class Beverage {
-    String description;
+public abstract class Beverage {
+    String description = "Unknown Beverage";
 
     public String getDescription() {
         return description;
     }
 
-    public Float cost() {
-        return 0f;
-    }
+    public abstract double cost();
 }
