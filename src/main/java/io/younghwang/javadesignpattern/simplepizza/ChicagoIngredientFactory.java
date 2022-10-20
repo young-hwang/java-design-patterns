@@ -1,7 +1,6 @@
 package io.younghwang.javadesignpattern.simplepizza;
 
-public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
-
+public class ChicagoIngredientFactory implements PizzaIngredientFactory {
     @Override
     public Dough createDough() {
         return new ThinCrustDough();
@@ -9,27 +8,22 @@ public class NYPizzaIngredientFactory implements PizzaIngredientFactory {
 
     @Override
     public Sauce createSauce() {
-        return new MarinaraSauce();
+        return new PlumTomatoSource();
     }
 
     @Override
     public Cheese createCheese() {
-        return new ReggianoCheese();
+        return new MozzarellaCheese();
     }
 
     @Override
     public Veggies[] createVegges() {
-        Veggies veggies[] = {new Grarlic(), new Onion(), new Mushroom(), new RedPepper()};
+        Veggies[] veggies = {new Spinach(), new SlicedPepperoni(), new EggPlant(), new BlackOlives()};
         return veggies;
-    }
-
-    public Pepperoni createPepperoni() {
-        return new SlicePepperoni();
     }
 
     @Override
     public Clams createClam() {
-        return new FreshCalm();
+        return new FrozenClam();
     }
-
 }
