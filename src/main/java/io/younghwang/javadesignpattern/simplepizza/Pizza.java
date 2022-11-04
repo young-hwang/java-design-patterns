@@ -1,8 +1,6 @@
 package io.younghwang.javadesignpattern.simplepizza;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public abstract class Pizza {
     String name;
@@ -11,7 +9,7 @@ public abstract class Pizza {
     Veggies veggies[];
     Cheese cheese;
     Pepperoni pepperoni;
-    Clams clams;
+    Clams clam;
 
     abstract void prepare();
 
@@ -44,7 +42,7 @@ public abstract class Pizza {
                 ", veggies=" + Arrays.toString(veggies) +
                 ", cheese=" + cheese +
                 ", pepperoni=" + pepperoni +
-                ", clams=" + clams +
+                ", clams=" + clam +
                 '}';
     }
 }
