@@ -3,6 +3,9 @@ package io.younghwang.javadesignpattern.simplepizza;
 public class ClamPizza extends Pizza {
     PizzaIngredientFactory ingredientFactory;
 
+    public ClamPizza() {
+    }
+
     public ClamPizza(PizzaIngredientFactory ingredientFactory) {
         this.ingredientFactory = ingredientFactory;
     }

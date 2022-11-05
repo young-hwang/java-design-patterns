@@ -1,0 +1,1 @@
+package io.younghwang.javadesignpattern.basemodel._01_singleton;
