@@ -1,7 +1,7 @@
 package io.younghwang.javadesignpattern.simplepizza;
 
 public class NYStyleCheesePizza extends Pizza {
-    public NYStyleCheesePizza() {
+    public NYStyleCheesePizza(NYPizzaIngredientFactory ingredientFactory) {
 ////        name = "NY Style Sauce and Cheese Pizza";
 ////        dough = "Thin Crust Dough";
 ////        sauce = "Marinara Sauce";
