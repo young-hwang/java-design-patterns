@@ -55,6 +55,6 @@ public class OnlineCourse {
     }
 
     private boolean availableTo(Student student) {
-        return true;
+        return this.students.contains(student);
     }
 }

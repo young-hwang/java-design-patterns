@@ -1,19 +1,18 @@
-package io.younghwang.basemodel._20_state._01_before;
+package io.younghwang.basemodel._20_state._02_after;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Student {
     private String name;
-    private Set<OnlineCourse> onlineCourses = new HashSet<>();
+    private final Set<OnlineCourse> onlineCourses = new HashSet<>();
 
     public Student(String name) {
         this.name = name;
     }
 
     public boolean isAvailable(OnlineCourse onlineCourse) {
-        return onlineCourses.contains(onlineCourse);
+        return this.onlineCourses.contains(onlineCourse);
     }
 
     public void addPrivateCourse(OnlineCourse onlineCourse) {
