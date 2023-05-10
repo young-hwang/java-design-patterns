@@ -1,9 +1,9 @@
 package io.younghwang.basemodel._18_memento._00_model;
 
 public class Memento {
-    private State state;
+    private String state;
 
-    public Memento(State state) {
+    public Memento(String state) {
         this.state = state;
     }
 }
