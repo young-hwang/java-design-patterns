@@ -13,3 +13,11 @@
 
 - 중재자 역할을 하는 클래스의 복잡도와 결합도가 증가한다.
 
+# mediator pattern in java
+
+ExecutorService
+Executor
+
+# mediator pattern in spring
+
+DispatcherServlet
