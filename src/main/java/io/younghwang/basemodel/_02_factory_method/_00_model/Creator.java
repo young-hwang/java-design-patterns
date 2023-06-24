@@ -1,4 +1,4 @@
-package io.younghwang.basemodel._02_factorymethod._00_model;
+package io.younghwang.basemodel._02_factory_method._00_model;
 
 public interface Creator {
     default void templateMethod() {

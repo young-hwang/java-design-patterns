@@ -1,4 +1,4 @@
-package io.younghwang.basemodel._02_factorymethod._00_model;
+package io.younghwang.basemodel._02_factory_method._00_model;
 
 /**
  * 구체적으로 어떤 인스턴스를 만들지는 서브 클래스 결정
