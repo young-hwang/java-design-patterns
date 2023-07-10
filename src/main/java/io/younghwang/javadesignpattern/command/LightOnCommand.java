@@ -1,6 +1,7 @@
 package io.younghwang.javadesignpattern.command;
 
 public class LightOnCommand implements Command {
+
     Light light;
 
     public LightOnCommand(Light light) {
