@@ -22,7 +22,7 @@ public class Stereo {
         System.out.println("Stereo Set Radio");
     }
 
-    public void setVolume() {
+    public void setVolume(int volume) {
         System.out.println("Stereo Set Volume");
     }
 }
