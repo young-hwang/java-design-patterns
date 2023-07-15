@@ -1,18 +1,42 @@
 package io.younghwang.javadesignpattern.command;
 
+import java.util.Arrays;
+
 public class RemoteControlTest {
 
-    public static void main(String[] args) {
-        SimpleRemoteControl simpleRemoteControl = new SimpleRemoteControl();
-        Light light = new Light();
-        LightOnCommand lightOnCommand = new LightOnCommand(light);
-        simpleRemoteControl.setSlot(lightOnCommand);
-        simpleRemoteControl.buttonWasPressed();
+    private Command[] onCommands;
+    private Command[] offCommands;
 
-        GarbageDoor garbageDoor = new GarbageDoor();
-        GarbageDoorUpCommand garbageDoorUpCommand = new GarbageDoorUpCommand(garbageDoor);
-        simpleRemoteControl.setSlot(garbageDoorUpCommand);
-        simpleRemoteControl.buttonWasPressed();
+    public RemoteControlTest() {
+        this.onCommands = new Command[7];
+        this.offCommands = new Command[7];
+
+        Command noCommand = new NoCommand();
+        for (int i = 0; i < 7; i++) {
+            this.onCommands[i] = noCommand;
+            this.offCommands[i] = noCommand;
+        }
+    }
+
+    public void setCommand(int slot, Command onCommand, Command offCommand) {
+        this.onCommands[slot] = onCommand;
+        this.offCommands[slot] = offCommand;
+    }
+
+    public void onButtonWasPushed(int slot) {
+        onCommands[slot].execute();
+    }
+
+    public void offButtonWasPushed(int slot) {
+        offCommands[slot].execute();
+    }
+
+    @Override
+    public String toString() {
+        return "RemoteControlTest{" +
+            "onCommands=" + Arrays.toString(onCommands) +
+            ", offCommands=" + Arrays.toString(offCommands) +
+            '}';
     }
 
 }
