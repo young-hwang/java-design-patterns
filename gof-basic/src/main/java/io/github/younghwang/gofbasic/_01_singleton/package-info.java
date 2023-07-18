@@ -1,0 +1,1 @@
+package io.github.younghwang.gofbasic._01_singleton;

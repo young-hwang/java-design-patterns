@@ -1,2 +1,4 @@
 rootProject.name = "java-design-patterns"
+include 'gof-basic'
+include 'hfdesignpattern'
 
