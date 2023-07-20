@@ -2,12 +2,12 @@ package io.github.younghwang.hfdesignpattern.command;
 
 import java.util.Arrays;
 
-public class RemoteControlTest {
+public class RemoteControl {
 
     private Command[] onCommands;
     private Command[] offCommands;
 
-    public RemoteControlTest() {
+    public RemoteControl() {
         this.onCommands = new Command[7];
         this.offCommands = new Command[7];
 
