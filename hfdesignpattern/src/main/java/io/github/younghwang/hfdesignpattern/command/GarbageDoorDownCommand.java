@@ -13,4 +13,9 @@ public class GarbageDoorDownCommand implements Command {
         garbageDoor.down();
     }
 
+    @Override
+    public void undo() {
+        garbageDoor.up();
+    }
+
 }

@@ -13,4 +13,9 @@ public class GarbageDoorLightOnCommand implements Command {
         System.out.println("Garbage Door Light On");
     }
 
+    @Override
+    public void undo() {
+
+    }
+
 }

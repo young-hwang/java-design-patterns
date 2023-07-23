@@ -13,4 +13,9 @@ public class GarbageDoorStopCommand implements Command {
         System.out.println("Garbage Door Stop");
     }
 
+    @Override
+    public void undo() {
+
+    }
+
 }

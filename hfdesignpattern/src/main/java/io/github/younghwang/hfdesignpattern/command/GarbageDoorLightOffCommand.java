@@ -12,4 +12,9 @@ public class GarbageDoorLightOffCommand implements Command {
     public void execute() {
     }
 
+    @Override
+    public void undo() {
+
+    }
+
 }

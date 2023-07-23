@@ -2,7 +2,7 @@ package io.github.younghwang.hfdesignpattern.command;
 
 public class RemoteLoader {
     public static void main(String[] args) {
-        RemoteControl remoteControl = new RemoteControl();
+        RemoteControlWithUndo remoteControl = new RemoteControlWithUndo();
 
         Light lightOfKitchen = new Light("Kitchen");
         Light lightOfLivingRoom = new Light("Living Room");
