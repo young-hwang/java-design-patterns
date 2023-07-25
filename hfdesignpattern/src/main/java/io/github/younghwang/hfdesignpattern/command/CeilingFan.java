@@ -15,18 +15,22 @@ public class CeilingFan {
 
     public void high() {
         this.speed = HIGH;
+        System.out.println("HIGH");
     }
 
     public void medium() {
         this.speed = MEDIUM;
+        System.out.println("MEDIUM");
     }
 
     public void low() {
         this.speed = LOW;
+        System.out.println("LOW");
     }
 
     public void off() {
         this.speed = OFF;
+        System.out.println("OFF");
     }
 
     public int getSpeed() {

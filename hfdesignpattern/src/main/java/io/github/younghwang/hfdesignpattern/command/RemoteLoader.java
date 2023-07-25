@@ -4,36 +4,23 @@ public class RemoteLoader {
     public static void main(String[] args) {
         RemoteControlWithUndo remoteControl = new RemoteControlWithUndo();
 
-        Light lightOfKitchen = new Light("Kitchen");
-        Light lightOfLivingRoom = new Light("Living Room");
-        GarbageDoor garbageDoor = new GarbageDoor();
-        Stereo stereo = new Stereo();
+        CeilingFan ceilingFan = new CeilingFan("Living Room");
+        CeilingFanHighCommand ceilingFanHighCommand = new CeilingFanHighCommand(ceilingFan);
+        CeilingFanMediumCommand ceilingFanMediumCommand = new CeilingFanMediumCommand(ceilingFan);
+        CeilingFanLowCommand ceilingFanLowCommand = new CeilingFanLowCommand(ceilingFan);
+        CeilingFanOffCommand ceilingFanOffCommand = new CeilingFanOffCommand(ceilingFan);
 
-        LightOnCommand kitchenLightOn = new LightOnCommand(lightOfKitchen);
-        LightOffCommand kitchenLightOff = new LightOffCommand(lightOfKitchen);
-
-        LightOnCommand livingRoomLightOn = new LightOnCommand(lightOfLivingRoom);
-        LightOffCommand livingRoomLightOff = new LightOffCommand(lightOfLivingRoom);
-
-        GarbageDoorUpCommand garbageDoorUpCommand = new GarbageDoorUpCommand(garbageDoor);
-        GarbageDoorDownCommand garbageDoorDownCommand = new GarbageDoorDownCommand(garbageDoor);
-
-        StereoOnWithCDCommand stereoOnWithCDCommand = new StereoOnWithCDCommand(stereo);
-        StereoOffCommand stereoOffCommand = new StereoOffCommand(stereo);
-
-        remoteControl.setCommand(0, kitchenLightOn, kitchenLightOff);
-        remoteControl.setCommand(1, livingRoomLightOn, livingRoomLightOff);
-        remoteControl.setCommand(2, garbageDoorUpCommand, garbageDoorDownCommand);
-        remoteControl.setCommand(3, stereoOnWithCDCommand, stereoOffCommand);
+        remoteControl.setCommand(0, ceilingFanHighCommand, ceilingFanOffCommand);
+        remoteControl.setCommand(1, ceilingFanMediumCommand, ceilingFanOffCommand);
+        remoteControl.setCommand(2, ceilingFanLowCommand, ceilingFanOffCommand);
 
         remoteControl.onButtonWasPushed(0);
-        remoteControl.onButtonWasPushed(1);
-        remoteControl.onButtonWasPushed(2);
-        remoteControl.onButtonWasPushed(3);
-
-        remoteControl.offButtonWasPushed(3);
-        remoteControl.offButtonWasPushed(2);
-        remoteControl.offButtonWasPushed(1);
         remoteControl.offButtonWasPushed(0);
+        System.out.println(remoteControl);
+        remoteControl.undoButtonWasPushed(0);
+
+        remoteControl.onButtonWasPushed(1);
+        System.out.println(remoteControl);
+        remoteControl.undoButtonWasPushed(1);
     }
 }

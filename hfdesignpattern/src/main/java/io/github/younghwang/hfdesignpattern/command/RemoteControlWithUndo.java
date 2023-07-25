@@ -41,9 +41,12 @@ public class RemoteControlWithUndo {
 
     @Override
     public String toString() {
-        return "RemoteControl{" +
-                "onCommands=" + Arrays.toString(onCommands) +
-                ", offCommands=" + Arrays.toString(offCommands) +
-                '}';
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("RemoteControl{");
+
+        Arrays.stream(onCommands).forEach(c -> stringBuffer.append(c.getClass().toString() + "\n"));
+
+        stringBuffer.append("}");
+        return stringBuffer.toString();
     }
 }
