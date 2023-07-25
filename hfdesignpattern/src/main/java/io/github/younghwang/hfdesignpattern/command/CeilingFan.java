@@ -1,12 +1,12 @@
 package io.github.younghwang.hfdesignpattern.command;
 
 public class CeilingFan {
-    private final static int HIGH = 3;
-    private final static int MEDIUM = 2;
-    private final static int LOW = 1;
-    private final static int OFF = 0;
-    String location;
-    int speed;
+    public final static int HIGH = 3;
+    public final static int MEDIUM = 2;
+    public final static int LOW = 1;
+    public final static int OFF = 0;
+    private String location;
+    private int speed;
 
     public CeilingFan(String location) {
         this.location = location;
