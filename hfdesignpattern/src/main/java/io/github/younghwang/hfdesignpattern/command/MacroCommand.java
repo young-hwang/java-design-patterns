@@ -16,6 +16,6 @@ public class MacroCommand implements Command {
 
     @Override
     public void undo() {
-
+        Arrays.stream(commands).forEach(Command::undo);
     }
 }
