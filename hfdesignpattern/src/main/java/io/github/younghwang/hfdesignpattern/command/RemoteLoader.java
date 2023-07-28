@@ -9,7 +9,6 @@ public class RemoteLoader {
         Stereo stereo = new Stereo("Living Room");
         Hottub hottub = new Hottub();
 
-
         LightOnCommand lightOn = new LightOnCommand(light);
         TvOnCommand tvOn = new TvOnCommand(tv);
         StereoOnWithCDCommand stereoOn = new StereoOnWithCDCommand(stereo);

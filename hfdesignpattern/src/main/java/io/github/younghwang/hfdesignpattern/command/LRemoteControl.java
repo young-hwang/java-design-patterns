@@ -2,41 +2,32 @@ package io.github.younghwang.hfdesignpattern.command;
 
 import java.util.Arrays;
 
-public class RemoteControlWithUndo {
-    private Command[] onCommands;
-    private Command[] offCommands;
+public class LRemoteControl {
+    private LCommand[] onCommands;
+    private LCommand[] offCommands;
 
-    private Command undoCommand;
+    public LRemoteControl() {
+        this.onCommands = new LCommand[7];
+        this.offCommands = new LCommand[7];
 
-    public RemoteControlWithUndo() {
-        this.onCommands = new Command[7];
-        this.offCommands = new Command[7];
-
-        Command noCommand = new NoCommand();
+        LCommand noCommand = new LNoCommand();
         for (int i = 0; i < 7; i++) {
             this.onCommands[i] = noCommand;
             this.offCommands[i] = noCommand;
         }
-        undoCommand = noCommand;
     }
 
-    public void setCommand(int slot, Command onCommand, Command offCommand) {
+    public void setCommand(int slot, LCommand onCommand, LCommand offCommand) {
         this.onCommands[slot] = onCommand;
         this.offCommands[slot] = offCommand;
     }
 
     public void onButtonWasPushed(int slot) {
         onCommands[slot].execute();
-        undoCommand = onCommands[slot];
     }
 
     public void offButtonWasPushed(int slot) {
         offCommands[slot].execute();
-        undoCommand = offCommands[slot];
-    }
-
-    public void undoButtonWasPushed(int slot) {
-        undoCommand.undo();
     }
 
     @Override
