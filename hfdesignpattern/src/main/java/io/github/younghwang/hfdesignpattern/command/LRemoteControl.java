@@ -12,8 +12,10 @@ public class LRemoteControl {
 
         LCommand noCommand = new LNoCommand();
         for (int i = 0; i < 7; i++) {
-            this.onCommands[i] = noCommand;
-            this.offCommands[i] = noCommand;
+            this.onCommands[i] = () -> {
+            };
+            this.offCommands[i] = () -> {
+            };
         }
     }
 
