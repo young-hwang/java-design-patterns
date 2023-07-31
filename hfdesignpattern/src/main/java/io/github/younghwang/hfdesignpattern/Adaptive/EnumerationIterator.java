@@ -2,7 +2,6 @@ package io.github.younghwang.hfdesignpattern.Adaptive;
 
 import java.util.Enumeration;
 import java.util.Iterator;
-import java.util.Objects;
 
 public class EnumerationIterator implements Iterator<Object> {
     Enumeration<?> enumeration;
