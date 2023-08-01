@@ -1,11 +1,11 @@
 package io.github.younghwang.hfdesignpattern.homesweethometheater;
 
 public class Screen {
-    public void on() {
+    public void up() {
 
     }
 
-    public void off() {
+    public void down() {
 
     }
 }
