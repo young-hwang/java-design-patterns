@@ -1,6 +1,8 @@
 package io.github.younghwang.hfdesignpattern.homesweethometheater;
 
 public class TheaterLights {
+    int count;
+
     public void on() {
 
     }
@@ -9,7 +11,7 @@ public class TheaterLights {
 
     }
 
-    public void dim() {
-
+    public void dim(int count) {
+        this.count = count;
     }
 }

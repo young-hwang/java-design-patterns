@@ -4,6 +4,7 @@ public class Amplifier {
     private Tuner tuner;
     private DvdPlayer dvdPlayer;
     private CdPlayer cdPlayer;
+    private int volume;
 
     public void on() {
 
@@ -17,8 +18,8 @@ public class Amplifier {
 
     }
 
-    public void setDvd() {
-
+    public void setDvd(DvdPlayer dvdPlayer) {
+        this.dvdPlayer = dvdPlayer;
     }
 
     public void setStereoSound() {
@@ -33,8 +34,8 @@ public class Amplifier {
 
     }
 
-    public void setVolume() {
-
+    public void setVolume(int volume) {
+        this.volume = volume;
     }
 
     @Override

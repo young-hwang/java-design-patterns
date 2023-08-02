@@ -1,21 +1,21 @@
 package io.github.younghwang.hfdesignpattern.homesweethometheater;
 
 public class Projector {
-    private DvdPlayer dvdPlayer;
+    DvdPlayer dvdPlayer;
 
-    private void on() {
-
-    }
-
-    private void off() {
+    void on() {
 
     }
 
-    private void tvModel() {
+    void off() {
 
     }
 
-    private void wideScreenModel() {
+    void tvModel() {
+
+    }
+
+    void wideScreenModel() {
 
     }
 

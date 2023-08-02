@@ -2,6 +2,7 @@ package io.github.younghwang.hfdesignpattern.homesweethometheater;
 
 public class DvdPlayer {
     private Amplifier amplifier;
+    private String movie;
 
     public void on() {
 
@@ -19,8 +20,8 @@ public class DvdPlayer {
 
     }
 
-    public void play() {
-
+    public void play(String movie) {
+        this.movie = movie;
     }
 
     public void setSurroundAudio() {
