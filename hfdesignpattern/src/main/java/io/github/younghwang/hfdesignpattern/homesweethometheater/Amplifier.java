@@ -4,14 +4,13 @@ public class Amplifier {
     private Tuner tuner;
     private DvdPlayer dvdPlayer;
     private CdPlayer cdPlayer;
-    private int volume;
 
     public void on() {
-
+        System.out.println("Top-O-Line Amplifier on");
     }
 
     public void off() {
-
+        System.out.println("Top-O-Line Amplifier off");
     }
 
     public void setCd() {
@@ -27,7 +26,7 @@ public class Amplifier {
     }
 
     public void setSurroundSound() {
-
+        System.out.println("Top-O-Line Amplifier surround sound on (5 speakers, 1 subwoofer)");
     }
 
     public void setTimer() {
@@ -35,7 +34,7 @@ public class Amplifier {
     }
 
     public void setVolume(int volume) {
-        this.volume = volume;
+        System.out.println("Top-O-Line Amplifier setting volume to " + volume);
     }
 
     @Override

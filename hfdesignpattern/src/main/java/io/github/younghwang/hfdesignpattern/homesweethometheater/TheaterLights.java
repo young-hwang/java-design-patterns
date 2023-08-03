@@ -1,17 +1,15 @@
 package io.github.younghwang.hfdesignpattern.homesweethometheater;
 
 public class TheaterLights {
-    int count;
-
     public void on() {
-
+        System.out.println("Theater Ceiling Lights on");
     }
 
     public void off() {
-
+        System.out.println("Theater Ceiling Lights off");
     }
 
-    public void dim(int count) {
-        this.count = count;
+    public void dim(int dimming) {
+        System.out.println("Theater Ceiling Lights dimming to " + dimming + "%");
     }
 }

@@ -4,11 +4,11 @@ public class Projector {
     DvdPlayer dvdPlayer;
 
     void on() {
-
+        System.out.println("Top-O-Line Projector on");
     }
 
     void off() {
-
+        System.out.println("Top-O-Line Projector off");
     }
 
     void tvModel() {
@@ -16,7 +16,7 @@ public class Projector {
     }
 
     void wideScreenModel() {
-
+        System.out.println("Top-O-Line Projector in widescreen mode (16x9 aspect ratio)");
     }
 
     @Override
