@@ -24,4 +24,3 @@ public class Tea {
         System.out.println("Boiling water");
     }
 }
-}
