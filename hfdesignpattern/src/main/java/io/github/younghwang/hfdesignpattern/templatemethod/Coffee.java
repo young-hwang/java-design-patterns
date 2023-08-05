@@ -1,6 +1,6 @@
 package io.github.younghwang.hfdesignpattern.templatemethod;
 
-public class Coffee {
+public class Coffee extends CaffeineBeverage {
     public void prepareReceipt() {
         boilWater();
         brewCoffeeGrinds();

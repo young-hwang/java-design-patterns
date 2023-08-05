@@ -1,23 +1,12 @@
 package io.github.younghwang.hfdesignpattern.templatemethod;
 
-public class Tea extends CaffeineBeverage {
-    public void prepareReceipt() {
-        boilWater();
-        steepTeaBag();
-        pourInCup();
-        addSugarAndMild();
-    }
-
+public class CaffeineBeverage {
     private void addSugarAndMild() {
         System.out.println("Adding Sugar and Milk");
     }
 
     private void pourInCup() {
         System.out.println("Pouring into cup");
-    }
-
-    private void steepTeaBag() {
-        System.out.println("Steeping the tea");
     }
 
     private void boilWater() {
