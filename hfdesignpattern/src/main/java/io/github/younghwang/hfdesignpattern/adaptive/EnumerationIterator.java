@@ -1,4 +1,4 @@
-package io.github.younghwang.hfdesignpattern.Adaptive;
+package io.github.younghwang.hfdesignpattern.adaptive;
 
 import java.util.Enumeration;
 import java.util.Iterator;

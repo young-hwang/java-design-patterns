@@ -1,4 +1,4 @@
-package io.github.younghwang.hfdesignpattern.Adaptive;
+package io.github.younghwang.hfdesignpattern.adaptive;
 
 public interface Duck {
     void quack();

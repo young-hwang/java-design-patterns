@@ -1,6 +1,4 @@
-package io.github.younghwang.hfdesignpattern.Adaptive;
-
-import java.security.cert.TrustAnchor;
+package io.github.younghwang.hfdesignpattern.adaptive;
 
 public class DuckTestDrive {
     public static void main(String[] args) {
