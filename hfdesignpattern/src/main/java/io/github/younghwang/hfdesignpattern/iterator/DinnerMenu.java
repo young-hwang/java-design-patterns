@@ -22,4 +22,8 @@ public class DinnerMenu {
             this.menuItems[numberOfItems++] = menuItem;
         }
     }
+
+    public MenuItem[] getMenuItems() {
+        return menuItems;
+    }
 }
