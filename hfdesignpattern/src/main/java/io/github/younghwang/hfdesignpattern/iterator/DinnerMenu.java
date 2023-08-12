@@ -1,5 +1,7 @@
 package io.github.younghwang.hfdesignpattern.iterator;
 
+import java.util.Iterator;
+
 public class DinnerMenu {
     static final int MAX_ITEMS = 6;
     int numberOfItems = 0;
@@ -25,5 +27,9 @@ public class DinnerMenu {
 
     public MenuItem[] getMenuItems() {
         return menuItems;
+    }
+
+    public Iterator createIterator() {
+        return new DinnerMenuIterator(this.menuItems);
     }
 }
