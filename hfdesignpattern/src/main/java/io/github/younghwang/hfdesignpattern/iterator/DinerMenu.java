@@ -2,12 +2,12 @@ package io.github.younghwang.hfdesignpattern.iterator;
 
 import java.util.Iterator;
 
-public class DinnerMenu {
+public class DinerMenu {
     static final int MAX_ITEMS = 6;
     int numberOfItems = 0;
     MenuItem[] menuItems;
 
-    public DinnerMenu() {
+    public DinerMenu() {
         this.menuItems = new MenuItem[MAX_ITEMS];
 
         addItem("Vegetarian BLT", "(Fakin') Bacon with lettuce & tomato on whole wheat", true, 2.99);
@@ -30,6 +30,6 @@ public class DinnerMenu {
     }
 
     public Iterator createIterator() {
-        return new DinnerMenuIterator(this.menuItems);
+        return new DinerMenuIterator(this.menuItems);
     }
 }

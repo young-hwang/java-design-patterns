@@ -3,11 +3,11 @@ package io.github.younghwang.hfdesignpattern.iterator;
 import java.awt.*;
 import java.util.Iterator;
 
-public class DinnerMenuIterator implements Iterator<MenuItem> {
+public class DinerMenuIterator implements Iterator<MenuItem> {
     MenuItem[] items;
     int position = 0;
 
-    public DinnerMenuIterator(MenuItem[] items) {
+    public DinerMenuIterator(MenuItem[] items) {
         this.items = items;
     }
 

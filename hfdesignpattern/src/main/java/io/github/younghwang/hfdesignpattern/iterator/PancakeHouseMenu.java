@@ -1,6 +1,7 @@
 package io.github.younghwang.hfdesignpattern.iterator;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class PancakeHouseMenu {
     ArrayList<MenuItem> menuItems;
@@ -21,5 +22,9 @@ public class PancakeHouseMenu {
 
     public ArrayList<MenuItem> getMenuItems() {
         return this.menuItems;
+    }
+
+    public Iterator<MenuItem> createIterator() {
+        return this.menuItems.iterator();
     }
 }

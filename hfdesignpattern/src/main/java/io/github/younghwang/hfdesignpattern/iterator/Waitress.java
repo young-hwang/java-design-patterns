@@ -2,22 +2,22 @@ package io.github.younghwang.hfdesignpattern.iterator;
 
 import javax.naming.Name;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Waitress {
-    PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
-    ArrayList<MenuItem> breakfastItems = pancakeHouseMenu.getMenuItems();
+    PancakeHouseMenu pancakeHouseMenu;
+    DinerMenu dinerMenu;
 
-    DinnerMenu dinnerMenu = new DinnerMenu();
-    MenuItem[] lunchItems = dinnerMenu.getMenuItems();
+    public Waitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu) {
+        this.pancakeHouseMenu = pancakeHouseMenu;
+        this.dinerMenu = dinerMenu;
+    }
 
     void printMen() {
-        for (MenuItem item : breakfastItems) {
-            System.out.println(item.toString());
-        }
-
-        for (int i = 0; i < lunchItems.length; i++) {
-            System.out.println(lunchItems[i].toString());
-        }
+        Iterator pancakeIterator = pancakeHouseMenu.createIterator();
+        Iterator dinerIterator = dinerMenu.createIterator();
+        printMenu(pancakeIterator);
+        printMenu(dinerIterator);
     }
 
     void printBreakfastMenu() {
@@ -35,4 +35,11 @@ public class Waitress {
     boolean isItemVegetarian(String name) {
         return true;
     }
+
+    private void printMenu(Iterator iterator) {
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
+    }
+
 }
