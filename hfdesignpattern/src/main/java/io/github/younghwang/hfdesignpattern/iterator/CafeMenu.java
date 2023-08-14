@@ -1,9 +1,10 @@
 package io.github.younghwang.hfdesignpattern.iterator;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
-public class CafeMenu {
+public class CafeMenu implements Menu {
     HashMap<String, MenuItem> menuItems = new HashMap<>();
 
     public CafeMenu() {
@@ -19,5 +20,10 @@ public class CafeMenu {
 
     public Map<String, MenuItem> getItems() {
         return this.menuItems;
+    }
+
+    @Override
+    public Iterator<MenuItem> createIterator() {
+        return this.menuItems.values().iterator();
     }
 }
