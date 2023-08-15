@@ -1,6 +1,6 @@
 package io.github.younghwang.hfdesignpattern.iterator;
 
-public class MenuItem {
+public class MenuItem extends MenuComponent {
     String name;
     String description;
     boolean vegetarian;
@@ -43,6 +43,11 @@ public class MenuItem {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public void print() {
+        this.toString();
     }
 
     @Override
