@@ -1,7 +1,5 @@
 package io.github.younghwang.hfdesignpattern.iterator;
 
-import javax.naming.Name;
-import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Waitress {

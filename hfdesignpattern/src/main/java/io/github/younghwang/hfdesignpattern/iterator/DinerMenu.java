@@ -30,6 +30,7 @@ public class DinerMenu implements Menu {
     }
 
     public Iterator createIterator() {
-        return new DinerMenuIterator(this.menuItems);
+        return new AlternatingDinerMenuIterator(this.menuItems);
+//        return new DinerMenuIterator(this.menuItems);
     }
 }
