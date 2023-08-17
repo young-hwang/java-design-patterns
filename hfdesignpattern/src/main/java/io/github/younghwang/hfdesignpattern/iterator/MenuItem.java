@@ -1,5 +1,7 @@
 package io.github.younghwang.hfdesignpattern.iterator;
 
+import java.util.Iterator;
+
 public class MenuItem extends MenuComponent {
     String name;
     String description;
@@ -48,6 +50,11 @@ public class MenuItem extends MenuComponent {
     @Override
     public void print() {
         System.out.println(this.toString());
+    }
+
+    @Override
+    Iterator<MenuComponent> createIterator() {
+        return new NullIterator();
     }
 
     @Override

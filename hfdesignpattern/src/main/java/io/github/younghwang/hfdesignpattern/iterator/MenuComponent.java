@@ -1,6 +1,8 @@
 package io.github.younghwang.hfdesignpattern.iterator;
 
-public class MenuComponent {
+import java.util.Iterator;
+
+public abstract class MenuComponent {
     public void add(MenuComponent component) {
         throw new UnsupportedOperationException();
     }
@@ -32,4 +34,6 @@ public class MenuComponent {
     public void print() {
         throw new UnsupportedOperationException();
     }
+
+    abstract Iterator<MenuComponent> createIterator();
 }
