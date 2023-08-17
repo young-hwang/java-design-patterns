@@ -47,7 +47,7 @@ public class MenuItem extends MenuComponent {
 
     @Override
     public void print() {
-        this.toString();
+        System.out.println(this.toString());
     }
 
     @Override

@@ -1,6 +1,6 @@
 package io.github.younghwang.hfdesignpattern.iterator;
 
-public abstract class MenuComponent {
+public class MenuComponent {
     public void add(MenuComponent component) {
         throw new UnsupportedOperationException();
     }
