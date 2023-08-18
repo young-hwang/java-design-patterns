@@ -30,6 +30,7 @@ public class MenuTestDrive {
 
         Waitress waitress = new Waitress(allMenus);
         waitress.printMenu();
+        waitress.printVegetarianMenu();
     }
 
     private static void addMenuList(Menu menu, MenuList menuList) {
