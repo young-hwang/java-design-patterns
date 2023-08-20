@@ -75,4 +75,12 @@ public class GumballMachine {
             System.out.println("No gumball dispensed");
         }
     }
+
+    @Override
+    public String toString() {
+        return "GumballMachine{" +
+                "state=" + state +
+                ", count=" + count +
+                '}';
+    }
 }
