@@ -25,7 +25,13 @@ public class SoldState implements State {
 
     @Override
     public void dispense() {
-        System.out.println("No gumball dispensed");
+        this.gumballMachine.releaseBall();
+        if (this.gumballMachine.getCount() > 0) {
+            this.gumballMachine.setState(this.gumballMachine.getNoQuarterState());
+        } else {
+            System.out.println("Oops, out of gumballs");
+            this.gumballMachine.setState(this.gumballMachine.getSoldOutState());
+        }
     }
 
 }

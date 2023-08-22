@@ -73,4 +73,8 @@ public class GumballMachine {
             this.count -= 1;
         }
     }
+
+    public int getCount() {
+        return count;
+    }
 }
