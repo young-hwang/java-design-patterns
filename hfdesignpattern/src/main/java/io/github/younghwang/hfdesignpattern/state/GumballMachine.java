@@ -83,4 +83,8 @@ public class GumballMachine {
                 ", count=" + count +
                 '}';
     }
+
+    public int getHasQuarterState() {
+        return HAS_QUARTER;
+    }
 }
