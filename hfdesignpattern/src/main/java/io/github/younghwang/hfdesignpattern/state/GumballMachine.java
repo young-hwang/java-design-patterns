@@ -1,79 +1,38 @@
 package io.github.younghwang.hfdesignpattern.state;
 
 public class GumballMachine {
-    final static int SOLD_OUT = 0;
-    final static int NO_QUARTER = 1;
-    final static int HAS_QUARTER = 2;
-    final static int SOLD = 3;
-
-    int state = SOLD_OUT;
+    State soldOutState;
+    State noQuarterState;
+    State hasQuarterState;
+    State soldState;
+    State state;
     int count = 0;
 
     public GumballMachine(int count) {
+        this.soldOutState = new SoldOutState(this);
+        this.noQuarterState = new NoQuarterState(this);
+        this.hasQuarterState = new HasQuarterState(this);
+        this.soldState = new SoldOutState(this);
+
         this.count = count;
         if (count > 0) {
-            state = NO_QUARTER;
+            this.state = this.noQuarterState;
+        } else {
+            this.state = this.soldOutState;
         }
     }
 
     public void insertQuarter() {
-        if (state == HAS_QUARTER) {
-            System.out.println("You can't insert another quarter");
-        } else if (state == NO_QUARTER) {
-            state = HAS_QUARTER;
-            System.out.println("You inserted a quarter");
-        } else if (state == SOLD_OUT) {
-            System.out.println("You can't insert a quarter, the machine is sold out");
-        } else if (state == SOLD) {
-            System.out.println("Please wait, we're already giving you a gumball");
-        }
+        this.state.insertQuarter();
     }
 
     public void ejectQuarter() {
-        if (state == HAS_QUARTER) {
-            System.out.println("Quarter returned");
-            state = NO_QUARTER;
-        } else if (state == NO_QUARTER) {
-            System.out.println("You haven't inserted a quarter");
-        } else if (state == SOLD) {
-            System.out.println("Sorry, you alread turned the crank");
-        } else if (state == SOLD_OUT) {
-            System.out.println("You can't eject, you haven't inserted a quarter yet");
-        }
+        this.state.ejectQuarter();
     }
 
     public void turnCrank() {
-        if (state == SOLD) {
-            System.out.println("Turning twice doesn't get you another gumball!");
-            state = NO_QUARTER;
-        } else if (state == NO_QUARTER) {
-            System.out.println("You turned but there's no quarter");
-        } else if (state == SOLD_OUT) {
-            System.out.println("You turned but there are no gumball");
-        } else if (state == HAS_QUARTER) {
-            System.out.println("You turned...");
-            state = SOLD;
-            dispense();
-        }
-    }
-
-    private void dispense() {
-        if (state == SOLD) {
-            System.out.println("Turning twice doesn't get you another gumball!");
-            count = count - 1;
-            if (count == 0) {
-                System.out.println("Oops, out of gumball!");
-                state = SOLD_OUT;
-            } else {
-                state = NO_QUARTER;
-            }
-        } else if (state == NO_QUARTER) {
-            System.out.println("You need to pay first");
-        } else if (state == SOLD_OUT) {
-            System.out.println("No gumball dispensed");
-        } else if (state == HAS_QUARTER) {
-            System.out.println("No gumball dispensed");
-        }
+        this.state.turnCrank();
+        this.state.dispense();
     }
 
     @Override
@@ -84,7 +43,34 @@ public class GumballMachine {
                 '}';
     }
 
-    public int getHasQuarterState() {
-        return HAS_QUARTER;
+    public State getHasQuarterState() {
+        return this.hasQuarterState;
+    }
+
+    public State getSoldOutState() {
+        return soldOutState;
+    }
+
+    public State getNoQuarterState() {
+        return noQuarterState;
+    }
+
+    public State getSoldState() {
+        return soldState;
+    }
+
+    public State getState() {
+        return state;
+    }
+
+    public void setState(State state) {
+        this.state = state;
+    }
+
+    public void releaseBall() {
+        System.out.println("A gumball comes rolling out the slot...");
+        if (this.count != 0) {
+            this.count -= 1;
+        }
     }
 }
