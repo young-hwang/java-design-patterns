@@ -1,7 +1,10 @@
 package io.github.younghwang.hfdesignpattern.state;
 
+import java.util.Random;
+
 public class HasQuarterState implements State {
     GumballMachine gumballMachine;
+    Random random = new Random(System.currentTimeMillis());
 
     public HasQuarterState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;
@@ -21,7 +24,12 @@ public class HasQuarterState implements State {
     @Override
     public void turnCrank() {
         System.out.println("You turned...");
-        this.gumballMachine.setState(this.gumballMachine.getSoldState());
+        int winner = random.nextInt(10);
+        if ((winner == 0) && (gumballMachine.getCount() > 1)) {
+            this.gumballMachine.setState(this.gumballMachine.getWinnerState());
+        } else {
+            this.gumballMachine.setState(this.gumballMachine.getSoldState());
+        }
     }
 
     @Override
