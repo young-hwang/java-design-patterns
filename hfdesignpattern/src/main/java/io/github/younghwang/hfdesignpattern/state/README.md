@@ -23,3 +23,21 @@ Strategy Pattern은 Client 가 Context에 부합하는 Strategy Objects를 runti
 Strategy Pattern은 유연한 하위 클래스 대안을 구성한다.
 State Pattern은 context내에 다양한 조건을 추가한다.
 
+| Pattern         | Description                            |
+|:----------------|:---------------------------------------|
+| State           | 캡슐화된 교체가능한 행동과 위임을 사용하여 어떤 행동을 사용할지 결정 |
+| Strategy        | 하위 클래스에서 알고리즘의 스텝을 구현하여 결정             |
+| Template Method | 상태 기반 행동을 캡슐화 하고 현재 상태에 따라 위임 행위       |
+
+## BULLET POINTS
+
+- The State Pattern allows an object to have many different behaviors that are based on its internal state.
+- Unlike a procedural state machine, the State Pattern represents state as a full-blown class.
+- The Context gets its behavior by delegating to the current state object it is composed with.
+- By encapsulating each state into a class, we localize any changes that will need to be made.
+- The State and Strategy Patterns have the same class diagram, but they differ in intent.
+- Strategy Pattern typically configures Context classes with a behavior or algorithm. State Pattern allows a Context to
+  change its behavior as the state of the Context changes.
+- State transitions can be controlled by the State classes or by the Context classes. Using the State Pattern will
+  typically result in a greater number of classes in your design.
+- State classes may be shared among Context instances.
