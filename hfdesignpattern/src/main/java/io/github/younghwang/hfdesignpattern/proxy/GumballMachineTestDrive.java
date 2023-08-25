@@ -2,34 +2,15 @@ package io.github.younghwang.hfdesignpattern.proxy;
 
 public class GumballMachineTestDrive {
     public static void main(String[] args) {
-        GumballMachine gumballMachine = new GumballMachine(5);
+        int count = 0;
+        if (args.length < 2) {
+            System.out.println("GumballMachine <name> <inventory>");
+            System.exit(1);
+        }
+        count = Integer.parseInt(args[1]);
+        GumballMachine gumballMachine = new GumballMachine(args[0], count);
 
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-        System.out.println(gumballMachine);
-        System.out.println("");
-
-        gumballMachine.insertQuarter();
-        gumballMachine.ejectQuarter();
-        gumballMachine.turnCrank();
-        System.out.println(gumballMachine);
-        System.out.println("");
-
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-        gumballMachine.ejectQuarter();
-        System.out.println(gumballMachine);
-        System.out.println("");
-
-        gumballMachine.insertQuarter();
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-        System.out.println(gumballMachine);
+        GumballMonitor gumballMonitor = new GumballMonitor(gumballMachine);
+        gumballMonitor.report();
     }
 }
