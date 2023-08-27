@@ -1,6 +1,8 @@
 package io.github.younghwang.hfdesignpattern.proxy;
 
-public interface State {
+import java.io.Serializable;
+
+public interface State extends Serializable {
     void insertQuarter();
 
     void ejectQuarter();

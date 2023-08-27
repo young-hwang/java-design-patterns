@@ -1,6 +1,10 @@
 package io.github.younghwang.hfdesignpattern.proxy;
 
-public class GumballMachine {
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+public class GumballMachine extends UnicastRemoteObject implements GumballMachienRemote {
+    private static final Long serialVersionUID = 5L;
     State soldOutState;
     State noQuarterState;
     State hasQuarterState;
@@ -10,7 +14,7 @@ public class GumballMachine {
     int count = 0;
     String location;
 
-    public GumballMachine(String location, int count) {
+    public GumballMachine(String location, int count) throws RemoteException {
         this.soldOutState = new SoldOutState(this);
         this.noQuarterState = new NoQuarterState(this);
         this.hasQuarterState = new HasQuarterState(this);

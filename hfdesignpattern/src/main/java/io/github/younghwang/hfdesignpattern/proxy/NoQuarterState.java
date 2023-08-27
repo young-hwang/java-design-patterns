@@ -1,7 +1,8 @@
 package io.github.younghwang.hfdesignpattern.proxy;
 
 public class NoQuarterState implements State {
-    private GumballMachine gumballMachine;
+    private static final Long serialVersionUID = 2L;
+    transient GumballMachine gumballMachine;
 
     public NoQuarterState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;

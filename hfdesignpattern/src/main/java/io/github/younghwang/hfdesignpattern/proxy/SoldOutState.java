@@ -1,7 +1,8 @@
 package io.github.younghwang.hfdesignpattern.proxy;
 
 public class SoldOutState implements State {
-    GumballMachine gumballMachine;
+    private static final Long serialVersionUID = 3L;
+    transient GumballMachine gumballMachine;
 
     public SoldOutState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;

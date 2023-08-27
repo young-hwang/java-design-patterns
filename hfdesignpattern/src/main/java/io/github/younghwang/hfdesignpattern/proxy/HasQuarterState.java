@@ -3,7 +3,8 @@ package io.github.younghwang.hfdesignpattern.proxy;
 import java.util.Random;
 
 public class HasQuarterState implements State {
-    GumballMachine gumballMachine;
+    private static final Long serialVersionUID = 1L;
+    transient GumballMachine gumballMachine;
     Random random = new Random(System.currentTimeMillis());
 
     public HasQuarterState(GumballMachine gumballMachine) {
