@@ -3,7 +3,7 @@ package io.github.younghwang.hfdesignpattern.proxy;
 public class GumballMonitor {
     GumballMachine gumballMachine;
 
-    public GumballMonitor(GumballMachine gumballMachine) {
+    public GumballMonitor(gumballMa gumballMachine) {
         this.gumballMachine = gumballMachine;
     }
 

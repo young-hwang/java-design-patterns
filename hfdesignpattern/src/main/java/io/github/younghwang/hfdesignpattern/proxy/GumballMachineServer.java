@@ -2,7 +2,7 @@ package io.github.younghwang.hfdesignpattern.proxy;
 
 import java.rmi.RemoteException;
 
-public class GumballMachineServer implements GumballMachienRemote {
+public class GumballMachineServer implements GumballMachineRemote {
     @Override
     public String getLocation() throws RemoteException {
         return null;

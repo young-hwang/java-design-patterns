@@ -3,7 +3,7 @@ package io.github.younghwang.hfdesignpattern.proxy;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-public class GumballMachine extends UnicastRemoteObject implements GumballMachienRemote {
+public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote {
     private static final Long serialVersionUID = 5L;
     State soldOutState;
     State noQuarterState;
