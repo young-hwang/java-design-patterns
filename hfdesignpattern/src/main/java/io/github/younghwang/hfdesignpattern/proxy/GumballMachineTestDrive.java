@@ -5,7 +5,6 @@ import java.rmi.registry.LocateRegistry;
 
 public class GumballMachineTestDrive {
     public static void main(String[] args) {
-        GumballMachineRemote gumballMachine = null;
         int count = 0;
         if (args.length < 2) {
             System.out.println("GumballMachine <name> <inventory>");
@@ -13,11 +12,12 @@ public class GumballMachineTestDrive {
         }
 
         try {
-            count = Integer.parseInt(args[1]);
-            gumballMachine = new GumballMachine(args[0], count);
+            GumballMachineRemote seoulGumballMachine = new GumballMachine("seoul", 1);
+
             // Create an RMI registry on port 1099
             LocateRegistry.createRegistry(1099);
-            Naming.rebind(args[0] + "/gumballmachine", gumballMachine);
+
+            Naming.rebind("seoul/gumballmachine", seoulGumballMachine);
         } catch (Exception e) {
             e.printStackTrace();
         }
