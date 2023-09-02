@@ -16,3 +16,29 @@ classDiagram
     Proxy: request()
     RealSubject: request()
 ```
+
+# Proxy Pattern vs Decorator Pattern
+
+| Pattern   | Description |
+|:----------|:------------|
+| Decorator | 클래스에 행위를 추가 |
+| Proxy     | 객제의 접근 제어   |
+
+# Dynamic Proxy
+
+InvocationHandler 를 이용하여 모든 메소드는 실행은 invoke()를 통과하게 된다.
+InvocationHandler는 실제 객체의 메소드의 접근을 제어하게 된다.
+
+```mermaid
+classDiagram
+    Subject <|.. RealSubject
+    Subject <|.. Proxy
+    InvocationHandler <|.. InvocationHandlerImpl
+    RealSubject <-- InvocationHandlerImpl
+    InvocationHandlerImpl <-- Proxy
+    Subject: request()
+    RealSubject: request()
+    Proxy: request()
+    InvocationHandler: invoke()
+    InvocationHandlerImpl: invoke()
+```
