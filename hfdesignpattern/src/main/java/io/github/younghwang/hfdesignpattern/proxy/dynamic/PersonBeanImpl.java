@@ -2,7 +2,7 @@ package io.github.younghwang.hfdesignpattern.proxy.dynamic;
 
 public class PersonBeanImpl implements PersonBean {
     String name;
-    String gener;
+    String gender;
     String interests;
     int rating;
     int ratingCount = 0;
@@ -14,7 +14,7 @@ public class PersonBeanImpl implements PersonBean {
 
     @Override
     public String getGender() {
-        return this.gener;
+        return this.gender;
     }
 
     @Override
@@ -35,7 +35,7 @@ public class PersonBeanImpl implements PersonBean {
 
     @Override
     public void setGender(String gender) {
-        this.gener = gender;
+        this.gender = gender;
     }
 
     @Override
