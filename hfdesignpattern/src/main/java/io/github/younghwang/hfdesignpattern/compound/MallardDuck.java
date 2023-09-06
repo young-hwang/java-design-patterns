@@ -1,0 +1,8 @@
+package io.github.younghwang.hfdesignpattern.compound;
+
+public class MallardDuck implements Quackable {
+    @Override
+    public void quack() {
+        System.out.println("Quack");
+    }
+}
