@@ -1,5 +1,6 @@
 package io.github.younghwang.hfdesignpattern.compound;
 
+// Adapter Pattern
 public class GooseAdapter implements Quackable {
     Goose goose;
 
