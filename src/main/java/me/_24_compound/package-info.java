@@ -1,0 +1,1 @@
+package me._24_compound;

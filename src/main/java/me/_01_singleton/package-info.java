@@ -1,0 +1,1 @@
+package me._01_singleton;

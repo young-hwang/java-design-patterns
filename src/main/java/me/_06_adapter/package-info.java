@@ -1,0 +1,1 @@
+package me._06_adapter;
