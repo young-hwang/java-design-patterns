@@ -1,7 +1,5 @@
 package me._24_compound.hf;
 
-import io.github.younghwang.hfdesignpattern.adaptive.Duck;
-
 public class DuckSimulator {
     public static void main(String[] args) {
         DuckSimulator duckSimulator = new DuckSimulator();
@@ -20,11 +18,15 @@ public class DuckSimulator {
 
         Flock flockOfDucks = new Flock();
 
+
         flockOfDucks.add(mallardDuck);
         flockOfDucks.add(redHeadDuck);
         flockOfDucks.add(duckCall);
         flockOfDucks.add(rubberDuck);
         flockOfDucks.add(gooseAdapter);
+
+        Quackologist quackologist = new Quackologist();
+        flockOfDucks.registerObserver(quackologist);
 
         Flock flockOfMallards = new Flock();
 

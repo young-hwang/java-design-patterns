@@ -1,5 +1,5 @@
 package me._24_compound.hf;
 
-public interface Quackable {
+public interface Quackable extends QuackObservable {
     void quack();
 }
