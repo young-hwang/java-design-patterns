@@ -8,7 +8,8 @@ import java.io.Serializable;
  * 원하는 시점 getInstance 호출 시 instance 생성 가능
  */
 public class Settings implements Serializable {
-    public Settings() {
+    private Settings() {
+        System.out.println("Settings");
     }
 
     private static class SettingsHolder {
@@ -16,6 +17,7 @@ public class Settings implements Serializable {
     }
 
     public static Settings getInstance() {
+        System.out.println("getInstance");
         return SettingsHolder.INSTANCE;
     }
 

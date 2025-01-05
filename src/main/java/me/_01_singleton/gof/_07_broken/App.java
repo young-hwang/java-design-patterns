@@ -14,6 +14,7 @@ import java.lang.reflect.InvocationTargetException;
  */
 public class App {
     public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException, IOException, ClassNotFoundException {
+        System.out.println("Start main");
         Settings settings1 = Settings.getInstance();
         Settings settings2;
         try (ObjectOutput out = new ObjectOutputStream(new FileOutputStream("settings.obj"))) {

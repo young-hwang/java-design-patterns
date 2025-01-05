@@ -7,6 +7,10 @@ package me._01_singleton.gof._03_after;
  * instance 사용하지 않는 경우 불필요한 리소스 투입
  */
 public class Settings {
+    private Settings() {
+        System.out.println("Settings");
+    }
+
     private static final Settings SETTINGS = new Settings();
 
     public static Settings getInstance() {
