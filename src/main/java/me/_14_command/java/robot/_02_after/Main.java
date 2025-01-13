@@ -1,4 +1,4 @@
-package me._21_strategy.java.robot._02_after;
+package me._14_command.java.robot._02_after;
 
 public class Main {
     public static void main(String[] args) {

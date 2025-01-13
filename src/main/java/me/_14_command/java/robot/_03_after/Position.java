@@ -1,4 +1,4 @@
-package me._21_strategy.java.robot._01_before;
+package me._14_command.java.robot._03_after;
 
 public class Position {
     public int x;

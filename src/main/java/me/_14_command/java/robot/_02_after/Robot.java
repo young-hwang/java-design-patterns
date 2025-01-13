@@ -1,4 +1,4 @@
-package me._21_strategy.java.robot._01_before;
+package me._14_command.java.robot._02_after;
 
 import java.util.StringTokenizer;
 
@@ -13,24 +13,22 @@ public class Robot {
 
     public void execute(String commandSequence) {
         StringTokenizer tokenizer = new StringTokenizer(commandSequence, " ");
-        while (tokenizer.hasMoreTokens()) {
-            String token = tokenizer.nextToken();
-            if (!executeCommand(token)) {
-                System.out.println("Invalid command: " + token);
-                break;
+        try {
+            while (tokenizer.hasMoreTokens()) {
+                String token = tokenizer.nextToken();
+                executeCommand(token);
             }
+        } catch (InvalidCommandException e) {
+            System.out.println("Invalid command: " + e.getMessage());
         }
     }
 
-    private boolean executeCommand(String commandString) {
+    private boolean executeCommand(String commandString) throws InvalidCommandException {
         Command command = Command.parseCommand(commandString);
-        if (command == null) {
-            return false;
-        }
         return executeCommand(command);
     }
 
-    private boolean executeCommand(Command command) {
+    private boolean executeCommand(Command command) throws InvalidCommandException {
         if (command == Command.FORWARD) {
             position.relativeMove(direction.x, direction.y);
         } else if (command == Command.BACKWARD) {
@@ -40,7 +38,7 @@ public class Robot {
         } else if (command == Command.TURN_LEFT) {
             direction.setDirection(-direction.y, direction.x);
         } else {
-            return false;
+            throw new InvalidCommandException();
         }
         return true;
     }
