@@ -1,4 +1,4 @@
-package me.etc.delegate.java._02_after;
+package me.etc.delegate.java.randomdice._02_after;
 
 public class Main {
     public static void main(String[] args) {

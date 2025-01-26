@@ -1,4 +1,4 @@
-package me.etc.delegate.java._01_before;
+package me.etc.delegate.java.randomdice._03_after;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,6 +7,9 @@ public class Main {
         Dice dice2 = new Dice();
 
         Dice[] dices = {dice0, dice1, dice2};
+
+        dice2.setSeed(456L);
+
         for (Dice dice : dices) {
             for (int i = 0; i < 10; i++) {
                 System.out.printf("%d, ", dice.nextInt());

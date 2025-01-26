@@ -1,4 +1,4 @@
-package me.etc.delegate.java._03_after;
+package me.etc.delegate.java.randomdice._04_after;
 
 import java.util.Random;
 
@@ -6,7 +6,7 @@ public class Dice {
     private final Random random;
 
     public Dice() {
-        random = new Random(314159L);
+        this(314159L);
     }
 
     public Dice(long seed) {

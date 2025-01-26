@@ -1,19 +1,23 @@
-package me.etc.delegate.java._01_before;
+package me.etc.delegate.java.randomdice._02_after;
 
 import java.util.Random;
 
 public class Dice extends Random {
+    private final Random random;
+
     public Dice() {
         super(314159L);
+        random = this;
     }
 
     public Dice(long seed) {
         super(seed);
+        random = this;
     }
 
     @Override
     public int nextInt() {
-        return super.nextInt(6) + 1;
+        return random.nextInt(6) + 1;
     }
 
 
