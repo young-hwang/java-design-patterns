@@ -1,10 +1,8 @@
-package me._07_bridge.java.csv._01_before;
+package me._07_bridge.java.csv._02_after;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.StringReader;
-import java.nio.file.Files;
-import java.nio.file.Path;
 
 public class CSVStringReader extends CSVReader {
     private final BufferedReader bufferedReader;
